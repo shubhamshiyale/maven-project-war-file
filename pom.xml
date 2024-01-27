@@ -25,7 +25,8 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>bind</goal>
+                            <goal>clean</goal>
+                            <goal>install</goal>
                         </goals>
                     </execution>
                 </executions>
