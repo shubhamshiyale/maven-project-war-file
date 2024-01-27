@@ -18,18 +18,19 @@
   <build>
     <finalName>vikashwarfile</finalName>
     <plugins>
-            <plugin>
-                <groupId>org.jibx</groupId>
-                <artifactId>jibx-maven-plugin</artifactId>
-                <version>3.8.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>install</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+        <plugin>
+            <groupId>org.jibx</groupId>
+            <artifactId>jibx-maven-plugin</artifactId>
+            <version>3.8.1</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>install</goal>
+                        <goal>package</goal> <!-- Added package goal -->
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
   </build>
 </project>
