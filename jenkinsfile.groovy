@@ -62,7 +62,7 @@ pipeline{
                         """
                         }
                         catch (Exception e){
-                            echo "error is ${e}"
+                            throw e
                         }
                     }
                 }
