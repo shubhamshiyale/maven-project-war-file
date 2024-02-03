@@ -10,7 +10,8 @@ pipeline{
                     cleanWs()
                     println('checkout git repo')
                     sh"""
-                        git clone https://github.com/shubhamshiyale/${GIT-repo}.git
+                        echo "${${GIT-repo}}"
+                        git clone https://github.com/shubhamshiyale/"${GIT-repo}".git
 
                     """
                  }
@@ -23,7 +24,7 @@ pipeline{
                 dir("${WORKSPACE}"){
                 script{
                     sh """
-                       cd ${GIT-repo}
+                       cd "${GIT-repo}"
                        mvn install
                     """
                 }
@@ -35,8 +36,8 @@ pipeline{
                 dir("${WORKSPACE}"){
                     script{
                         sh """
-                           cd ${GIT-repo}
-                           docker build -t ${GIT-repo}-image .
+                           cd "${GIT-repo}"
+                           docker build -t "${GIT-repo}"-image .
                         """
                     }
                 }
@@ -48,7 +49,7 @@ pipeline{
                     script{
                         sh"""
                           docker images 
-                          docker run -itdp 8080:8080 ${GIT-repo}-image                           
+                          docker run -itdp 8080:8080 "${GIT-repo}"-image                           
                         """
                     }
                 }
