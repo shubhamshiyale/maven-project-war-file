@@ -74,7 +74,7 @@ pipeline{
             echo "sending email to devops that deploy is succcess"
         }
         failure{
-            err "sending email to devops that deploy is fail"
+            error "sending email to devops that deploy is fail"
         }
     }
 }
