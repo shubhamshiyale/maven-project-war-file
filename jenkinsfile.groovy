@@ -55,13 +55,26 @@ pipeline{
             steps{
                 dir("${WORKSPACE}"){
                     script{
+                        try{
                         sh"""
                           docker images 
-                          docker run -itdp 8080:8080 "${GIT_repo}"-image                           
+                          docker run -itdp 8080:8080 "${GIT_repo}"                          
                         """
+                        }
+                        catch (Exception e){
+                            echo "error is ${e}"
+                        }
                     }
                 }
             }
+        }
+    }
+    post{
+        success{
+            echo "sending email to devops that deploy is succcess"
+        }
+        failure{
+            echo "sending email to devops that deploy is fail"
         }
     }
 }
