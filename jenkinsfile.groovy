@@ -19,7 +19,7 @@ pipeline{
                     println('checkout git repo')
                     sh"""
                         echo "${GIT_repo}"
-                        git clone https://github.com/shubhamshiyale/"${GIT_repo}".git
+                        git clone https://github.com/shubhamshiyale/"${GIT_repo}".git -b master
 
                     """
                  }
