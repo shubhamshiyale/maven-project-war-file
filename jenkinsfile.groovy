@@ -7,10 +7,18 @@ pipeline{
             steps{
                dir("${WORKSPACE}"){
                  script{
+                    properties([
+                        parameters([
+                            choice(
+                                choices: ['maven-project-war-file'],
+                                name: 'GIT-repo'
+                            )
+                        ])
+                    ])
                     cleanWs()
                     println('checkout git repo')
                     sh"""
-                        echo "${${GIT-repo}}"
+                        echo "${GIT-repo}"
                         git clone https://github.com/shubhamshiyale/"${GIT-repo}".git
 
                     """
