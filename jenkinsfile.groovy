@@ -18,8 +18,8 @@ pipeline{
                     cleanWs()
                     println('checkout git repo')
                     sh"""
-                        echo "${GIT-repo}"
-                        git clone https://github.com/shubhamshiyale/"${GIT-repo}".git
+                        echo "${GIT_repo}"
+                        git clone https://github.com/shubhamshiyale/"${GIT_repo}".git
 
                     """
                  }
