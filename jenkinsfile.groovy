@@ -11,7 +11,7 @@ pipeline{
                         parameters([
                             choice(
                                 choices: ['maven-project-war-file'],
-                                name: 'GIT-repo'
+                                name: 'GIT_repo'
                             )
                         ])
                     ])
@@ -32,7 +32,7 @@ pipeline{
                 dir("${WORKSPACE}"){
                 script{
                     sh """
-                       cd "${GIT-repo}"
+                       cd "${GIT_repo}"
                        mvn install
                     """
                 }
@@ -44,8 +44,8 @@ pipeline{
                 dir("${WORKSPACE}"){
                     script{
                         sh """
-                           cd "${GIT-repo}"
-                           docker build -t "${GIT-repo}"-image .
+                           cd "${GIT_repo}"
+                           docker build -t "${GIT_repo}"-image .
                         """
                     }
                 }
@@ -57,7 +57,7 @@ pipeline{
                     script{
                         sh"""
                           docker images 
-                          docker run -itdp 8080:8080 "${GIT-repo}"-image                           
+                          docker run -itdp 8080:8080 "${GIT_repo}"-image                           
                         """
                     }
                 }
