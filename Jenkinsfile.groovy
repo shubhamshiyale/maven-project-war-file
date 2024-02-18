@@ -9,7 +9,7 @@ pipeline{
                     script{
                     cleanWs()
                     println 'git checkout started'
-                    sh 'git clone https://github.com/shubhamshiyale/maven-project-war-file.git -b master'
+                    sh 'git clone https://github.com/shubhamshiyale/servlettomcatsample.git -b master'
                     }
                 }
             }
@@ -21,7 +21,7 @@ pipeline{
                         try{
                         println 'building the project'
                         sh """
-                        cd ${WORKSPACE}/maven-project-war-file
+                        cd ${WORKSPACE}/servlettomcatsample/servlettomcatsample
                         mvn install 
                         """
                         }
