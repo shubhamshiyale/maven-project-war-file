@@ -7,6 +7,7 @@ pipeline{
             steps{
                 dir("${WORKSPACE}"){
                     script{
+                    cleanWs()
                     println 'git checkout started'
                     sh 'git clone https://github.com/shubhamshiyale/maven-project-war-file.git '
                     }
