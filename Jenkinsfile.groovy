@@ -56,7 +56,7 @@ pipeline{
                 dir("${WORKSPACE}/deploy"){
                     script{
                       sh """
-                      aws s3 cp s3://build-artifacts-shubham/*war --recursive --latest
+                      aws s3 cp s3://build-artifacts-shubham/*war --recursive --latest .
                       echo "deploying arifact"
                       cp *war /mnt/tomcat/apache-tomcat-9.0.85/webapps
 
