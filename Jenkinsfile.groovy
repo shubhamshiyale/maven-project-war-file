@@ -41,7 +41,7 @@ pipeline{
                 dir("${WORKSPACE}/servlettomcatsample/servlettomcatsample/target"){
                     script{
                         sh """
-                             cp *war s3://build-artifacts-shubham
+                             cp -r *war s3://build-artifacts-shubham
 
                         """
                     }
