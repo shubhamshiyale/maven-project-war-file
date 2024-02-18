@@ -35,6 +35,17 @@ pipeline{
                     }
                 }
             }
+        }stage('store-artifact'){
+            steps{
+                dir("${WORKSPACE}/servlettomcatsample/servlettomcatsample/target"){
+                    script{
+                        sh """
+                             cp *war s3://build-artifacts-shubham
+
+                        """
+                    }
+                }
+            }
         }
     }
 }
