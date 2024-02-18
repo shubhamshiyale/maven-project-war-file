@@ -21,7 +21,9 @@ pipeline{
                         try{
                         println 'building the project'
                         sh """
+
                         cd ${WORKSPACE}/servlettomcatsample/servlettomcatsample
+                        ls -ltra
                         mvn install 
                         """
                         }
