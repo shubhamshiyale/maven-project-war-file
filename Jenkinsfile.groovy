@@ -18,11 +18,16 @@ pipeline{
             steps{
                 dir("${WORKSPACE}"){
                     script{
+                        try{
                         println 'building the project'
                         sh """
                         cd ${WORKSPACE}/maven-project-war-file
                         mvn install 
                         """
+                        }
+                        catch(Exception e){
+                            error 'build failed due to error :' + "${e}"
+                        }
                     }
                 }
             }
