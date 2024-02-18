@@ -35,7 +35,8 @@ pipeline{
                     }
                 }
             }
-        }stage('store-artifact'){
+        }
+        stage('store-artifact'){
             steps{
                 dir("${WORKSPACE}/servlettomcatsample/servlettomcatsample/target"){
                     script{
