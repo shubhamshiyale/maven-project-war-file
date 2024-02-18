@@ -50,6 +50,9 @@ pipeline{
         }
         stage('deploy'){
             steps{
+                agent{
+                    label 'QA'
+                }
                 dir("${WORKSPACE}/deploy"){
                     script{
                       sh """
