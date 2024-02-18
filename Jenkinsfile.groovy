@@ -2,7 +2,7 @@
 //this is a second commit 
 pipeline{
     agent{
-        label 'QA'
+        label 'DEV'
     }
     stages{
         stage('stage-checkout'){
