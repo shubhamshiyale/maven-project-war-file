@@ -5,8 +5,8 @@ pipeline{
     stages{
         stage('stage-checkout'){
             steps{
-                script{
-                    dir("${WORKSPACE}"){
+                dir("${WORKSPACE}"){
+                    script{
                     println 'git checkout started'
                     clone = "git clone https://github.com/shubhamshiyale/maven-project-war-file.git".execute()
                     }
