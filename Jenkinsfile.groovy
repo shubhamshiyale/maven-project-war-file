@@ -2,7 +2,7 @@
 //this is a second commit 
 pipeline{
     agent{
-        label 'Built-In Node'
+        label 'Jenkins-master'
     }
     stages{
         stage('stage-checkout'){
