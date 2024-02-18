@@ -1,7 +1,9 @@
 // This is the jenkins-file to cicd
 //this is a second commit 
 pipeline{
-    agent any
+    agent{
+        label 'QA'
+    }
     stages{
         stage('stage-checkout'){
             steps{
