@@ -9,7 +9,7 @@ pipeline{
                     script{
                     cleanWs()
                     println 'git checkout started'
-                    sh 'git clone https://github.com/shubhamshiyale/maven-project-war-file.git '
+                    sh 'git clone https://github.com/shubhamshiyale/maven-project-war-file.git -b master'
                     }
                 }
             }
